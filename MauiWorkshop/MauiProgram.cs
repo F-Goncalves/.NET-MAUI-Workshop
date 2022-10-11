@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics;
+using MauiWorkshop.DisneyApi;
+using MauiWorkshop.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace MauiWorkshop;
 
@@ -16,6 +19,17 @@ public static class MauiProgram
 				fonts.AddFont("NewWaltDisneyFontRegular-BPen.ttf", "NewWaltDisneyFontRegular");
 			});
 
+		builder.Services.AddSingleton<IDisneyApiClient, DisneyApiClient>();
+
+		builder.Services.AddSingleton<NavigationService>();
+		builder.Services.AddSingleton<INavigationService>(sp => sp.GetRequiredService<NavigationService>());
+		builder.Services.AddSingleton<IFlyoutNavigationService>(sp => sp.GetRequiredService<NavigationService>());
+
+		builder.Services.AddViewModelMapping<MainPage, MainPageViewModel>();
+		builder.Services.AddViewModelMapping<AboutPage, AboutPageViewModel>();
+		builder.Services.AddViewModelMapping<CharactersPage, CharactersPageViewModel>();
+		builder.Services.AddViewModelMapping<CharacterDetailsPage, CharacterDetailsPageViewModel>();
+
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
@@ -23,4 +37,3 @@ public static class MauiProgram
 		return builder.Build();
 	}
 }
-

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:disneyapi="clr-namespace:MauiWorkshop.DisneyApi;assembly=MauiWorkshop.DisneyApi"
+             xmlns:viewmodels="clr-namespace:MauiWorkshop.ViewModels" xmlns:mauiworkshop="clr-namespace:MauiWorkshop"
              x:Class="MauiWorkshop.CharacterDetailsPage"
-             x:DataType="disneyapi:Character"
-             Title="{Binding Name}">
+             x:DataType="viewmodels:CharacterDetailsPageViewModel"
+             Title="{Binding Character.Name}">
 
     <ContentPage.Resources>
         <Style x:Key="HeadingStyle"
@@ -29,13 +29,13 @@
 
     <Grid RowDefinitions="*,Auto,2*">
 
-        <Image Source="{Binding ImageUrl}"
-               HorizontalOptions="Fill"
-               Aspect="AspectFit"/>
+        <mauiworkshop:ImageWithLoadingIndicator ImageSource="{Binding Character.ImageUrl}"
+                                                HorizontalOptions="Fill"
+                                                Aspect="AspectFit"/>
         
 
         <Label Grid.Row="1"
-               Text="{Binding Name}"
+               Text="{Binding Character.Name}"
                HorizontalOptions="Center"
                FontSize="38"
                FontFamily="NewWaltDisneyFontRegular" />
@@ -46,7 +46,7 @@
 
                 <Label Text="Films"
                        Style="{StaticResource HeadingStyle}"/>
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Films}"
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Character.Films}"
                                      Margin="16,0">
 
                     <BindableLayout.EmptyView>
@@ -66,7 +66,7 @@
 
                 <Label Text="Short Films"
                        Style="{StaticResource HeadingStyle}" />
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding ShortFilms}"
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Character.ShortFilms}"
                                      Margin="16,0">
 
                     <BindableLayout.EmptyView>
@@ -87,7 +87,7 @@
 
                 <Label Text="TV Shows"
                        Style="{StaticResource HeadingStyle}" />
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding TvShows}"
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Character.TvShows}"
                                      Margin="16,0">
 
                     <BindableLayout.EmptyView>
@@ -108,7 +108,7 @@
 
                 <Label Text="Video Games"
                        Style="{StaticResource HeadingStyle}" />
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding VideoGames}"
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Character.VideoGames}"
                                      Margin="16,0">
 
                     <BindableLayout.EmptyView>
@@ -129,7 +129,7 @@
 
                 <Label Text="Park Attractions"
                        Style="{StaticResource HeadingStyle}" />
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding ParkAttractions}"
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Character.ParkAttractions}"
                                      Margin="16,0">
 
                     <BindableLayout.EmptyView>

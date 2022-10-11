@@ -1,11 +1,13 @@
-﻿namespace MauiWorkshop;
+﻿using MauiWorkshop.ViewModels;
+
+namespace MauiWorkshop;
 
 public partial class App : Application
 {
-	public App()
+	public App(IFlyoutNavigationService flyoutNavigationService)
 	{
 		InitializeComponent();
 
-		MainPage = new MainPage();
+		flyoutNavigationService.SetFlyoutMainPage<MainPageViewModel, CharactersPageViewModel>(this, true);
 	}
 }

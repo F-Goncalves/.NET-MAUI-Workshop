@@ -2,7 +2,7 @@
 
 namespace MauiWorkshop.DisneyApi;
 
-public class DisneyApiClient
+public class DisneyApiClient : IDisneyApiClient
 {
     private HttpClient _httpClient;
 

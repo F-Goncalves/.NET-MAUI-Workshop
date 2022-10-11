@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:disneyapi="clr-namespace:MauiWorkshop.DisneyApi;assembly=MauiWorkshop.DisneyApi"
-             xmlns:mauiworkshop="clr-namespace:MauiWorkshop"
+             xmlns:viewmodels="clr-namespace:MauiWorkshop.ViewModels" xmlns:mauiworkshop="clr-namespace:MauiWorkshop"
              x:Class="MauiWorkshop.CharactersPage"
-             x:DataType="mauiworkshop:CharactersPage"
+             x:DataType="viewmodels:CharactersPageViewModel"
              Title="Characters">
 
     <Grid RowDefinitions="Auto,*">
@@ -13,13 +13,13 @@
                Aspect="AspectFit"
                Margin="32"/>
 
-        <CollectionView x:Name="CharacterList"
-                        Grid.Row="1"
+        <CollectionView Grid.Row="1"
                         ItemsSource="{Binding Characters}"
+                        SelectedItem="{Binding SelectedCharacter}"
+                        SelectionChangedCommand="{Binding SelectionChangedCommand}"
                         SelectionMode="Single"
                         RemainingItemsThreshold="10"
-                        RemainingItemsThresholdReached="CharacterList_RemainingItemsThresholdReached"
-                        SelectionChanged="CharacterList_SelectionChanged"
+                        RemainingItemsThresholdReachedCommand="{Binding LoadMoreCharactersCommand}"
                         ItemsUpdatingScrollMode="KeepScrollOffset"
                         Margin="16,0">
 
@@ -68,9 +68,9 @@
                             </Border.Shadow>
 
                             <VerticalStackLayout>
-                                <Image Source="{Binding ImageUrl}"
-                                       Aspect="AspectFill"
-                                       HeightRequest="120"/>                                                   
+                                <mauiworkshop:ImageWithLoadingIndicator ImageSource="{Binding ImageUrl}"
+                                                                        Aspect="AspectFill"
+                                                                        HeightRequest="120"/>
 
                                 <Label Text="{Binding Name}"
                                        FontSize="24"
