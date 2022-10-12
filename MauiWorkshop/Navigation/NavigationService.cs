@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using AndroidX.Lifecycle;
 using MauiWorkshop.Navigation;
 
 namespace MauiWorkshop;
