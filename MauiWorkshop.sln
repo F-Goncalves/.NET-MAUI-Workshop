@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiWorkshop", "MauiWorkshop\MauiWorkshop.csproj", "{B07FE59C-B2E5-4491-B1A8-E0754510047A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiWorkshop.DisneyApi", "MauiWorkshop.DisneyApi\MauiWorkshop.DisneyApi.csproj", "{AD8396CD-7AB9-40DE-AA35-4CC93468EFAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{B07FE59C-B2E5-4491-B1A8-E0754510047A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B07FE59C-B2E5-4491-B1A8-E0754510047A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B07FE59C-B2E5-4491-B1A8-E0754510047A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AD8396CD-7AB9-40DE-AA35-4CC93468EFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8396CD-7AB9-40DE-AA35-4CC93468EFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8396CD-7AB9-40DE-AA35-4CC93468EFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8396CD-7AB9-40DE-AA35-4CC93468EFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

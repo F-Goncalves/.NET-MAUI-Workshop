@@ -60,4 +60,7 @@
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\MauiWorkshop.DisneyApi\MauiWorkshop.DisneyApi.csproj" />
+	</ItemGroup>
 </Project>

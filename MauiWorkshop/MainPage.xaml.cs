@@ -1,4 +1,6 @@
-﻿namespace MauiWorkshop;
+﻿using MauiWorkshop.DisneyApi;
+
+namespace MauiWorkshop;
 
 public partial class MainPage : ContentPage
 {
@@ -9,7 +11,22 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+		var apiClient = new DisneyApiClient();
+
+		apiClient.GetCharacters().ContinueWith(t =>
+		{
+			if (!t.IsCompletedSuccessfully)
+				return;
+
+			var characters = t.Result;
+		});
+    }
+
+    private void OnCounterClicked(object sender, EventArgs e)
 	{
 		count++;
 
