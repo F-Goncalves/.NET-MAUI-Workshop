@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:mauiworkshop="clr-namespace:MauiWorkshop"
+            x:Class="MauiWorkshop.RootFlyoutPage"
+            Title="RootFlyoutPage">
+    <FlyoutPage.Flyout>
+        <ContentPage BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}"
+                     Title="Menu">
+            <VerticalStackLayout Margin="0,64,0,0">
+                <Button Text="Characters"
+                        CornerRadius="0"
+                        BackgroundColor="Transparent"
+                        Clicked="Characters_Clicked"/>
+                <BoxView HeightRequest="1"
+                         HorizontalOptions="Fill"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray900}}" />
+                <Button Text="About"
+                        CornerRadius="0"
+                        BackgroundColor="Transparent"
+                        Clicked="About_Clicked"/>
+            </VerticalStackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <mauiworkshop:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
