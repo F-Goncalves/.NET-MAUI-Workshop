@@ -81,10 +81,4 @@
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>
-	<ItemGroup>
-	  <AndroidJavaLibrary Include="..\..\..\..\..\..\.nuget\packages\xamarin.androidx.annotation\1.4.0\jar\androidx.annotation.annotation.jar" Condition=" '$(AndroidApplication)' == 'true' ">
-	    <AndroidXSkipAndroidXMigration>true</AndroidXSkipAndroidXMigration>
-	    <Link>Views\androidx.annotation.annotation.jar</Link>
-	  </AndroidJavaLibrary>
-	</ItemGroup>
 </Project>
